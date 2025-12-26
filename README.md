@@ -112,15 +112,19 @@ A React Native / Expo project demonstrating a server-driven UI with:
 }
 ```
 ## Getting Started
-
-### 1. Install dependencies
-
+### 1.Clone the repository
+```bash
+git clone https://github.com/coderror420/server-driven-ui-assignment.git
+```
+### 2. Install dependencies
 ```bash
 npm install
 ```
+### 3. Ignite the App
 ```bash
 npx expo start
 ```
+### 4. Scan the QR code displayed in the terminal using the Expo Go app on your phone or open the app on http://localhost:8081/.
 
 <img width="639" height="750" alt="image" src="https://github.com/user-attachments/assets/f3cd5bc7-4237-43ae-a859-627579597943" />
 <img width="639" height="750" alt="image" src="https://github.com/user-attachments/assets/b064cd6a-af47-4bbb-aa52-f9f636227a77" />
