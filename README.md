@@ -57,7 +57,7 @@ A React Native / Expo project demonstrating a server-driven UI with:
 
 ## Project Structure
 ```
-.
+.server-driven-ui/
 ├── assets/
 | |── images/
 │ ├── pizza.jpg
