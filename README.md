@@ -8,10 +8,6 @@ A React Native / Expo project demonstrating a server-driven UI with:
 - Local and remote images
 - Modular, scalable architecture
 
----
-
-## Features
-
 ## Tasks Implemented
 
 ### 1. Primary Task: Dynamic UI Renderer
@@ -30,6 +26,8 @@ A React Native / Expo project demonstrating a server-driven UI with:
 - **Implementation:**  
   The app contains a toggle button which allows theme changes: light or dark.
   A custom `use-theme` hook manages light/dark switching locally.
+
+## Features
 
 ### Server-driven UI
 - All UI defined in `ui.json` (light) and `ui.darktheme.json` (dark)
