@@ -12,7 +12,7 @@ A React Native / Expo project demonstrating a server-driven UI with:
 
 ## Features
 
-## ## Tasks Implemented
+## Tasks Implemented
 
 ### 1. Primary Task: Dynamic UI Renderer
 - **Goal:** Create a system to render native components from a JSON list.
@@ -26,10 +26,9 @@ A React Native / Expo project demonstrating a server-driven UI with:
   The `use-theme` hook tracks the theme state, and `UIRenderer` applies the corresponding JSON (light or dark) to render the components instantly.
 
 ### 3. Bonus Task 2: Server-Driven Theming
-- **Goal:** Enable the server to dictate the application's visual theme (Colors / Modes).
+- **Goal:** Enable the server to dictate the application's visual theme (Modes).
 - **Implementation:**  
-  The API response includes a `theme` object defining the global color palette (`background`, `primary`, `text`).  
-  These values are passed down to all atomic components, allowing for instant **Dark Mode** or seasonal theme updates driven strictly by the backend.  
+  The app contains a toggle button which allows theme changes: light or dark.
   A custom `use-theme` hook manages light/dark switching locally.
 
 ### Server-driven UI
