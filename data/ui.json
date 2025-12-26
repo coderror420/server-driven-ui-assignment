@@ -1,0 +1,19 @@
+{
+  "screen": "promo_page",
+  "components": [
+    {
+      "type": "text",
+      "value": "Welcome to Pizza Week!",
+      "style": { "fontSize": 24, "color": "#FF5733" }
+    },
+    {
+      "type": "image",
+      "url": "https://i0.wp.com/www.chitrasfoodbook.com/wp-content/uploads/2024/07/veg-burger-mcdonalds-style-main.jpg?ssl=1"
+    },
+    {
+      "type": "button",
+      "text": "Order Now",
+      "action": "navigate_to_menu"
+    }
+  ]
+}
