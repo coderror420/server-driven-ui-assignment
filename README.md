@@ -1,50 +1,127 @@
-# Welcome to your Expo app 👋
+# Server-Driven UI React Native App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native / Expo project demonstrating a server-driven UI with:
 
-## Get started
+- JSON-defined UI components
+- Light/Dark theme support
+- Dynamic event handling
+- Local and remote images
+- Modular, scalable architecture
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+## ## Tasks Implemented
 
-   ```bash
-   npx expo start
-   ```
+### 1. Primary Task: Dynamic UI Renderer
+- **Goal:** Create a system to render native components from a JSON list.
+- **Implementation:**  
+  Built a generic `UIRenderer` component that parses JSON data and maps specific types (`text`, `image`, `button`) to native React Native components using a scalable **Component Registry**.
 
-In the output, you'll find options to open the app in a
+### 2. Bonus Task 1: Conditional Rendering Logic
+- **Goal:** Allow the server to control component appearance based on theme (Light/Dark).
+- **Implementation:**  
+  Components adapt their colors, styles, and appearance dynamically based on the current theme.  
+  The `use-theme` hook tracks the theme state, and `UIRenderer` applies the corresponding JSON (light or dark) to render the components instantly.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 3. Bonus Task 2: Server-Driven Theming
+- **Goal:** Enable the server to dictate the application's visual theme (Colors / Modes).
+- **Implementation:**  
+  The API response includes a `theme` object defining the global color palette (`background`, `primary`, `text`).  
+  These values are passed down to all atomic components, allowing for instant **Dark Mode** or seasonal theme updates driven strictly by the backend.  
+  A custom `use-theme` hook manages light/dark switching locally.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Server-driven UI
+- All UI defined in `ui.json` (light) and `ui.darktheme.json` (dark)
+- Supports `text`, `image`, and `button` components
+- Easily extendable for new components
 
-## Get a fresh project
+### Light/Dark Theme
+- Controlled via a custom `use-theme` hook
+- JSON swaps instantly when theme changes
+- Supports local assets and remote images
 
-When you're ready, run:
+### Event-driven Actions
+- Buttons trigger actions like `toggle_theme`.
+- Handled centrally in `Index.tsx`
 
-```bash
-npm run reset-project
+### Responsive Layout
+- Centered content, scrollable on smaller screens
+- Uniform spacing and sizing for text, images, and buttons
+
+
+## Tech Stack
+
+- **Framework:** React Native (Expo)  
+- **Language:** TypeScript  
+- **Styling:** StyleSheet 
+- **Architecture:** Modular, component-based, server-driven
+
+## Project Structure
+```
+.
+├── assets/
+| |── images/
+│ ├── pizza.jpg
+│ └── imageRegistry.ts
+├── components/
+│ ├── UIRenderer.tsx
+│ └── ui/
+│ ├── TextBlock.tsx
+│ ├── ImageBlock.tsx
+│ └── ButtonBlock.tsx
+├── data/
+│ ├── ui.json
+│ └── ui.darktheme.json
+├── hooks/
+│ └── use-theme.ts
+├── App.tsx
+└── index.tsx
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### ui.json
 
-## Learn more
+```json
+{
+  "screen": "promo_page",
+  "components": [
+    {
+      "type": "text",
+      "value": "Welcome to Pizza Week!",
+      "style": {
+        "fontSize": 24,
+        "fontWeight": "700",
+        "marginBottom": 8,
+        "color": "#FF5733"
+      }
+    },
+    {
+      "type": "image",
+      "source": "local",
+      "name": "pizza-light"
+    },
+    {
+      "type": "button",
+      "text": "Toggle Theme",
+      "action": "toggle_theme"
+    },
+    {
+      "type": "button",
+      "text": "Order Now",
+      "action": "navigate_to_menu"
+    }
+  ]
+}
+```
+## Getting Started
 
-To learn more about developing your project with Expo, look at the following resources:
+### 1. Install dependencies
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm install
+```
+```bash
+npx expo start
+```
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.

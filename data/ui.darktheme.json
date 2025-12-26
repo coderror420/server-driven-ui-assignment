@@ -1,20 +1,15 @@
 {
-  "screen": "promo_page",
+  "screen": "promo_page_dark",
   "components": [
     {
       "type": "text",
-      "value": "Welcome to Pizza Week!",
-      "style": {
-        "fontSize": 24,
-        "fontWeight": "700",
-        "marginBottom": 8,
-        "color": "#FF5733"
-      }
+      "value": "Pizza Week 🌙",
+      "style": { "fontSize": 24, "color": "#FFD369" }
     },
     {
       "type": "image",
       "source": "local",
-      "name": "pizza-light"
+      "name": "pizza-dark"
     },
     {
       "type": "button",

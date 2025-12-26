@@ -1,11 +1,25 @@
-import { Image } from "react-native";
-const ImageBlock = ({item}:{item:any})=>{
-    return (
-        <Image 
-        source={{uri:item.url}}
-        style = {{width:300, height:200, marginVertical:10}}
-        />
-    )
+import { Image, StyleSheet } from "react-native";
+import { imageRegistry } from "../../assets/image-registry";
 
+export default function ImageBlock({ item }: any) {
+  const source =
+    item.source === "local"
+      ? imageRegistry[item.name] 
+      : { uri: item.url };       
+
+  return (
+    <Image
+      source={source}
+      style={styles.image}
+      resizeMode="cover"
+    />
+  );
 }
-export default ImageBlock;
+
+const styles = StyleSheet.create({
+  image: {
+    width: 280,
+    height: 180,
+    borderRadius: 16,
+  },
+});

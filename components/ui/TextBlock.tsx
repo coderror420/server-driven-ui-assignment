@@ -1,7 +1,14 @@
-import {Text} from "react-native";
+import { Text } from "react-native";
 
-const TextBlock = ({item}:{item:any})=>{
-    return <Text style={item.style}>{item.value}</Text>
-
+export default function TextBlock({ item, theme }: any) {
+  return (
+    <Text
+      style={[
+        item.style,
+        { color: theme === "dark" ? "#E0E0E0" : item.style?.color },
+      ]}
+    >
+      {item.value}
+    </Text>
+  );
 }
-export default TextBlock;

@@ -1,9 +1,15 @@
-import { Text, TouchableOpacity, Alert } from "react-native";
-const ButtonBlock = ({ item }: { item: any })=>{
+import {Text, TouchableOpacity } from "react-native";
+
+export default function ButtonBlock({ item, onPress, theme }: any) {
   return (
     <TouchableOpacity
-      onPress={() => Alert.alert("Action", item.action || "clicked")}
-      style={{ padding: 12, backgroundColor: "#000", marginTop: 10 }}
+      onPress={onPress}
+      style={{
+        backgroundColor: theme === "dark" ? "#333" : "#FF5733",
+        padding: 14,
+        borderRadius: 10,
+        marginTop: 12,
+      }}
     >
       <Text style={{ color: "#fff", textAlign: "center" }}>
         {item.text}
@@ -11,5 +17,3 @@ const ButtonBlock = ({ item }: { item: any })=>{
     </TouchableOpacity>
   );
 }
-
-export default ButtonBlock;
