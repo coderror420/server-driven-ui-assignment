@@ -125,3 +125,5 @@ npm install
 npx expo start
 ```
 
+<img width="639" height="750" alt="image" src="https://github.com/user-attachments/assets/f3cd5bc7-4237-43ae-a859-627579597943" />
+<img width="639" height="750" alt="image" src="https://github.com/user-attachments/assets/b064cd6a-af47-4bbb-aa52-f9f636227a77" />
